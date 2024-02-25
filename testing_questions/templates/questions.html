@@ -22,7 +22,7 @@
   li{
     font-size: 30px;
   }
-  #check{
+  button{
     font-size: 25px;
     width: 100px
   }
@@ -49,6 +49,10 @@
     <li class='{% if question.answer == "D" %} correct {% endif %}'>D: {{ question.d }}</li>
   </ul>
 
-  <button id='check'>Check Answer</button>
+  <div>
+    <button id='check'>Check Answer</button>
+    <button><a href="{% url 'question' %}">Next</a></button>
+  </div>
+
 </body>
 </html>
