@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath regeneration_room_server regeneration_room_server.wsgi
+web: gunicorn --pythonpath testing_questions testing_questions.wsgi
