@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <title>Document</title>
+</head>
+
+<style>
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  h1{
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+  }
+  li{
+    font-size: 30px;
+  }
+  #check{
+    font-size: 25px;
+    width: 100px
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    // Attach a click event to the element with id "check"
+    $('#check').on('click', function() {
+      // Set li color to red
+      $('li').css('color', 'red');
+      
+      // Set elements with class "correct" color to green
+      $('.correct').css('color', 'green');
+    });
+  })
+</script>
+
+<body>
+  <h2>{{ question.question }}</h2>
+  <ul>
+    <li class='{% if question.answer == "A" %} correct {% endif %}'>A: {{ question.a }}</li>
+    <li class='{% if question.answer == "B" %} correct {% endif %}'>B: {{ question.b }}</li>
+    <li class='{% if question.answer == "C" %} correct {% endif %}'>C: {{ question.c }}</li>
+    <li class='{% if question.answer == "D" %} correct {% endif %}'>D: {{ question.d }}</li>
+  </ul>
+
+  <button id='check'>Check Answer</button>
+</body>
+</html>
